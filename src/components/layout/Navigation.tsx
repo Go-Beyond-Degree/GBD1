@@ -3,13 +3,6 @@
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
-const links = [
-  { label: 'Projects', href: '#projects' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Resources', href: '#resources' },
-  { label: 'About Us', href: '#about-us' },
-]
-
 function DeerMark() {
   return (
     <svg viewBox="0 0 38 42" className="h-9 w-7 text-signature" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -36,9 +29,12 @@ export default function Navigation() {
           <a href="#programs" className="flex items-center gap-1.5 hover:text-signature">
             Programs <ChevronDown size={13} strokeWidth={1.5} />
           </a>
-          {links.map((link) => (
-            <a key={link.label} href={link.href} className="hover:text-signature">{link.label}</a>
-          ))}
+          <a href="#projects" className="hover:text-signature">Projects</a>
+          <a href="#community" className="hover:text-signature">Community</a>
+          <a href="#resources" className="flex items-center gap-1.5 hover:text-signature">
+            Resources <ChevronDown size={13} strokeWidth={1.5} />
+          </a>
+          <a href="#about-us" className="hover:text-signature">About Us</a>
         </div>
 
         <a href="#newsletter" className="hidden rounded-md bg-signature px-4 py-[10px] text-[12px] font-medium text-white shadow-sm transition-colors hover:bg-signature/90 md:block">
@@ -52,7 +48,10 @@ export default function Navigation() {
         {isOpen && (
           <div className="absolute top-[72px] right-5 left-5 z-50 rounded-lg border border-soft-border bg-warm-ivory p-4 shadow-xl md:hidden">
             <a href="#programs" onClick={() => setIsOpen(false)} className="flex items-center justify-between border-b border-soft-border py-3 text-sm">Programs <ChevronDown size={15} /></a>
-            {links.map((link) => <a key={link.label} href={link.href} onClick={() => setIsOpen(false)} className="block border-b border-soft-border py-3 text-sm">{link.label}</a>)}
+            <a href="#projects" onClick={() => setIsOpen(false)} className="block border-b border-soft-border py-3 text-sm">Projects</a>
+            <a href="#community" onClick={() => setIsOpen(false)} className="block border-b border-soft-border py-3 text-sm">Community</a>
+            <a href="#resources" onClick={() => setIsOpen(false)} className="flex items-center justify-between border-b border-soft-border py-3 text-sm">Resources <ChevronDown size={15} /></a>
+            <a href="#about-us" onClick={() => setIsOpen(false)} className="block border-b border-soft-border py-3 text-sm">About Us</a>
             <a href="#newsletter" onClick={() => setIsOpen(false)} className="mt-4 block rounded-md bg-signature px-4 py-3 text-center text-sm text-white">Join Free Webinar</a>
           </div>
         )}

@@ -89,14 +89,20 @@ function Hero() {
           <h1 className="display-serif text-[43px] leading-[1.05] tracking-[-.047em] text-primary-text sm:text-[47px]">
             Build Real Products.<br /><span className="text-signature">Beyond Just a Degree.</span>
           </h1>
-          <p className="mt-5 max-w-[355px] text-[14px] leading-[1.62] text-muted-text">Go Beyond Degree is a builder fellowship where ambitious students collaborate, build, ship products, and grow their careers.</p>
-          <div className="mt-5 flex flex-wrap gap-4">
-            <a href="#newsletter" className="inline-flex items-center gap-3 rounded-md bg-signature px-5 py-[11px] text-[12px] font-medium text-white shadow-sm transition hover:bg-[#695442]">Join Free Webinar <ArrowRight size={15} strokeWidth={1.4} /></a>
-            <a href="#programs" className="inline-flex items-center rounded-md border border-soft-border px-5 py-[11px] text-[12px] text-signature transition hover:bg-warm-ivory">Explore Programs</a>
+          <div className="my-6 h-0.5 w-12 bg-signature"></div>
+          <p className="max-w-[355px] text-[14px] leading-[1.62] text-muted-text">A builder fellowship for ambitious students to learn, collaborate, ship products, and grow careers that matter.</p>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <a href="#newsletter" className="inline-flex items-center gap-3 rounded-md bg-signature px-5 py-[11px] text-[12px] font-medium text-white shadow-sm transition hover:bg-signature/90">Join Free Webinar <ArrowRight size={15} strokeWidth={1.4} /></a>
+            <a href="#programs" className="inline-flex items-center gap-3 rounded-md border border-soft-border px-5 py-[11px] text-[12px] text-signature transition hover:bg-warm-ivory">Explore Programs <ArrowRight size={15} strokeWidth={1.4} /></a>
           </div>
-
+          <div className="mt-7 flex items-center gap-3">
+            <img src="/images/avatars.jpg" alt="500+ builders" className="h-7 w-auto mix-blend-multiply" />
+            <p className="text-[11px] text-muted-text">500+ builders are already building the future.</p>
+          </div>
         </div>
-        <div className="hidden h-[340px] min-w-0 lg:block"><JourneyArtwork /></div>
+        <div className="hidden min-w-0 lg:block lg:-mr-16">
+          <img src="/images/hero-illustration.jpg" alt="Path to growth" className="w-full h-auto object-contain mix-blend-multiply drop-shadow-xl" />
+        </div>
       </div>
     </section>
   )
@@ -112,9 +118,11 @@ const stats = [
 function Stats() {
   return (
     <section className="px-5 sm:px-10 lg:px-16">
-      <div className="mx-auto grid max-w-[850px] grid-cols-2 rounded-xl border border-soft-border bg-warm-ivory px-5 py-4 shadow-[0_5px_17px_rgba(76,55,39,.04)] md:grid-cols-4 md:px-8 md:py-[17px]">
-        {stats.map(({ icon: Icon, value, label }, index) => <div key={label} className={`flex items-center justify-center gap-3 py-1 ${index > 0 ? 'md:border-l md:border-[#eee9e4]' : ''}`}>
-          <Icon size={27} className="text-signature" strokeWidth={1.9} />
+      <div className="mx-auto grid max-w-[900px] grid-cols-2 rounded-xl border border-soft-border bg-warm-ivory px-5 py-4 shadow-[0_5px_17px_rgba(76,55,39,.04)] md:grid-cols-4 md:px-8 md:py-[17px]">
+        {stats.map(({ icon: Icon, value, label }, index) => <div key={label} className={`flex items-center justify-center gap-3 py-1 ${index > 0 ? 'md:border-l md:border-soft-border' : ''}`}>
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EAE6E1]">
+            <Icon size={22} className="text-signature" strokeWidth={1.9} />
+          </div>
           <div><p className="display-serif text-[26px] leading-6 tracking-[-.04em]">{value}</p><p className="mt-1 text-[10px] text-muted-text">{label}</p></div>
         </div>)}
       </div>
