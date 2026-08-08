@@ -87,7 +87,7 @@ function Avatar({ index }: { index: number }) {
 function Hero() {
   return (
     <section id="top" className="overflow-hidden px-5 pb-7 pt-8 sm:px-10 lg:px-16">
-      <div className="mx-auto grid max-w-[900px] items-center gap-3 lg:grid-cols-[1.05fr_.95fr]">
+      <div className="mx-auto grid max-w-[1200px] items-center gap-3 lg:grid-cols-[1.05fr_.95fr]">
         <div className="relative z-10">
           <p className="mb-5 text-[12px] font-semibold tracking-[.19em] text-[#806956]">LEARN · BUILD · SHIP · GROW</p>
           <h1 className="display-serif text-[43px] leading-[1.05] tracking-[-.047em] text-[#15130f] sm:text-[47px]">
@@ -119,7 +119,7 @@ const stats = [
 function Stats() {
   return (
     <section className="px-5 sm:px-10 lg:px-16">
-      <div className="mx-auto grid max-w-[850px] grid-cols-2 rounded-xl border border-[#ece7e2] bg-white px-5 py-4 shadow-[0_5px_17px_rgba(76,55,39,.04)] md:grid-cols-4 md:px-8 md:py-[17px]">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-2 rounded-xl border border-[#ece7e2] bg-white px-5 py-4 shadow-[0_5px_17px_rgba(76,55,39,.04)] md:grid-cols-4 md:px-8 md:py-[17px]">
         {stats.map(({ icon: Icon, value, label }, index) => <div key={label} className={`flex items-center justify-center gap-3 py-1 ${index > 0 ? 'md:border-l md:border-[#eee9e4]' : ''}`}>
           <Icon size={27} className="text-[#806956]" strokeWidth={1.9} />
           <div><p className="display-serif text-[26px] leading-6 tracking-[-.04em]">{value}</p><p className="mt-1 text-[10px] text-[#3e3833]">{label}</p></div>
@@ -139,8 +139,8 @@ const features = [
 function Features() {
   return (
     <section id="how-it-works" className="px-5 pb-2 pt-3 sm:px-10 lg:px-16">
-      <div className="mx-auto max-w-[850px] text-center"><h2 className="display-serif text-[25px] tracking-[-.035em]">A New Kind of Learning</h2><p className="mt-1 text-[12px] text-[#4f4b47]">Hands-on. Collaborative. Outcome-driven.</p></div>
-      <div className="mx-auto mt-2 grid max-w-[850px] gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto max-w-[1200px] text-center"><h2 className="display-serif text-[25px] tracking-[-.035em]">A New Kind of Learning</h2><p className="mt-1 text-[12px] text-[#4f4b47]">Hands-on. Collaborative. Outcome-driven.</p></div>
+      <div className="mx-auto mt-2 grid max-w-[1200px] gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {features.map(({ icon: Icon, title, body }) => <article key={title} className="min-h-[162px] rounded-lg border border-[#ece7e2] bg-white px-5 py-4 shadow-[0_2px_8px_rgba(76,55,39,.035)]">
           <Icon size={26} className="text-[#806956]" strokeWidth={1.8} />
           <h3 className="display-serif mt-3 text-[16px] tracking-[-.02em]">{title}</h3>
@@ -160,14 +160,14 @@ const tracks = [
 ]
 
 function SectionTitle({ title, action }: { title: string; action: string }) {
-  return <div className="mx-auto flex max-w-[890px] items-center justify-between"><h2 className="display-serif text-[20px] tracking-[-.03em]">{title}</h2><a href="#" className="inline-flex items-center gap-2 text-[10px] text-[#715a47]">{action} <ArrowRight size={13} strokeWidth={1.3} /></a></div>
+  return <div className="mx-auto flex max-w-[1200px] items-center justify-between"><h2 className="display-serif text-[20px] tracking-[-.03em]">{title}</h2><a href="#" className="inline-flex items-center gap-2 text-[10px] text-[#715a47]">{action} <ArrowRight size={13} strokeWidth={1.3} /></a></div>
 }
 
 function Tracks() {
   return (
     <section id="programs" className="px-5 pb-0 pt-4 sm:px-10 lg:px-16">
       <SectionTitle title="Career-Focused Builder Tracks" action="View All Programs" />
-      <div className="hide-scrollbar mx-auto mt-2 grid max-w-[890px] grid-flow-col auto-cols-[166px] items-start gap-3 overflow-x-auto pb-1 lg:grid-flow-row lg:grid-cols-5 lg:overflow-visible">
+      <div className="hide-scrollbar mx-auto mt-2 grid max-w-[1200px] grid-flow-col auto-cols-[166px] items-start gap-3 overflow-x-auto pb-1 lg:grid-flow-row lg:grid-cols-5 lg:overflow-visible">
         {tracks.map(({ icon: Icon, title, body, popular }) => <article key={title} className="relative h-[153px] overflow-hidden rounded-lg border border-[#ece7e2] bg-white p-4 shadow-[0_2px_8px_rgba(76,55,39,.035)]">
           {popular && <span className="absolute right-3 top-2 rounded-full bg-[#806956] px-2 py-1 text-[8px] font-semibold text-white">Popular</span>}
           <Icon size={25} className="text-[#806956]" strokeWidth={1.6} />
@@ -201,7 +201,7 @@ function Projects() {
   return (
     <section id="projects" className="px-5 pb-0 pt-3 sm:px-10 lg:px-16">
       <SectionTitle title="Real Projects. Real Impact." action="See All Projects" />
-      <div className="mx-auto mt-2 grid max-w-[890px] gap-4 md:grid-cols-3">
+      <div className="mx-auto mt-2 grid max-w-[1200px] gap-4 md:grid-cols-3">
         {projects.map((project) => <article key={project.title} className="overflow-hidden rounded-lg border border-[#ece7e2] bg-white shadow-[0_2px_8px_rgba(76,55,39,.035)]"><DashboardPreview title={project.title} color={project.color} /><div className="px-4 py-2"><h3 className="text-[12px] font-semibold">{project.title}</h3><p className="mt-1 text-[10px] text-[#4a4541]">{project.body}</p><div className="mt-1 flex flex-wrap gap-1">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-[#e8e3de] bg-[#fdfcfb] px-1.5 py-[2px] text-[8px] text-[#4b4540]">{tag}</span>)}</div></div></article>)}
       </div>
     </section>
@@ -211,7 +211,7 @@ function Projects() {
 function Testimonial() {
   return (
     <section className="px-5 pb-0 pt-4 sm:px-10 lg:px-16">
-      <div className="mx-auto flex max-w-[770px] items-center gap-8 rounded-xl border border-[#eee9e3] bg-white px-10 py-7 shadow-[0_2px_8px_rgba(76,55,39,.025)]">
+      <div className="mx-auto flex max-w-[1000px] items-center gap-8 rounded-xl border border-[#eee9e3] bg-white px-10 py-7 shadow-[0_2px_8px_rgba(76,55,39,.025)]">
         <Quote size={38} className="shrink-0 rotate-180 text-[#d8d1cb]" fill="currentColor" strokeWidth={0} />
         <div className="flex-1"><p className="text-[11px] leading-[1.5] text-[#37322e]">GBD changed the way I learn. I didn’t just understand concepts—<br className="hidden sm:block" />I built real products with amazing people and got an internship<br className="hidden sm:block" />I’m proud of.</p></div>
         <div className="flex shrink-0 items-center gap-3"><span className="relative h-11 w-11 overflow-hidden rounded-full bg-[#15191d]"><span className="absolute left-[15px] top-2 h-3 w-3 rounded-full bg-[#c88761]" /><span className="absolute bottom-0 left-[10px] h-5 w-6 rounded-t-full bg-[#3c4242]" /></span><div><p className="text-[11px] font-semibold">Rohit Sharma</p><p className="mt-1 text-[9px] text-[#4e4741]">AI Product Engineer Intern at Zeta</p></div></div>
@@ -224,7 +224,7 @@ function Testimonial() {
 function Newsletter() {
   return (
     <section id="newsletter" className="px-5 pb-3 pt-0 sm:px-10 lg:px-16">
-      <div className="mx-auto flex max-w-[890px] flex-col items-center gap-4 border-y border-[#eee9e3] py-2 md:flex-row md:justify-between">
+      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-4 border-y border-[#eee9e3] py-2 md:flex-row md:justify-between">
         <div className="flex items-center gap-4"><span className="flex h-12 w-12 items-center justify-center rounded-lg border border-[#eee9e3] bg-white text-[#806956]"><Mail size={24} strokeWidth={1.35} /></span><div><h2 className="display-serif text-[16px] tracking-[-.02em]">Join our community of builders.</h2><p className="mt-1 text-[10px] text-[#3e3833]">Get free resources, updates, and webinar invites.</p></div></div>
         <form className="flex w-full max-w-[305px]" action="#"><input aria-label="Email address" type="email" placeholder="Enter your email" className="min-w-0 flex-1 rounded-l-md border border-r-0 border-[#e4ddd6] bg-white px-3 py-2 text-[10px] outline-none placeholder:text-[#aea49b] focus:border-[#806956]" /><button type="submit" className="inline-flex items-center gap-3 rounded-r-md bg-[#806956] px-4 py-2 text-[10px] font-medium text-white">Join Now <ArrowRight size={13} /></button></form>
       </div>
