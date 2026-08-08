@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ink: #15130f;
+    --muted: #7d6856;
+    --paper: #fbfaf8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--paper);
+  }
+
+  body {
+    min-width: 320px;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  button,
+  input {
+    font: inherit;
+  }
+}
+
+@utility display-serif {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+@utility hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
