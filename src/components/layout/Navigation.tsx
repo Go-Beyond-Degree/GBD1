@@ -26,7 +26,7 @@ export default function Navigation() {
 
   return (
     <header className="bg-primary-bg px-5 pt-5 sm:px-10 lg:px-16">
-      <nav className="mx-auto flex max-w-[1200px] items-center justify-between" aria-label="Primary navigation">
+      <nav className="mx-auto flex max-w-[900px] items-center justify-between" aria-label="Primary navigation">
         <a href="#top" className="flex items-center gap-2" aria-label="Go Beyond Degree home">
           <DeerMark />
           <span className="display-serif text-[16px] leading-[1.08] tracking-[-0.025em]">Go Beyond<br />Degree</span>
