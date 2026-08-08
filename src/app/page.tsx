@@ -4,7 +4,7 @@ import LandingContent from '@/components/sections/LandingContent'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#fbfaf8] text-[#15130f] antialiased">
+    <div className="min-h-screen bg-primary-bg text-primary-text antialiased">
       <Navigation />
       <LandingContent />
       <Footer />

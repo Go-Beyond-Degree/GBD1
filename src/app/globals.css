@@ -1,10 +1,21 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-bg: #FBF9F8;
+  --color-warm-ivory: #F6F4F1;
+  --color-primary-text: #101215;
+  --color-secondary-dark: #181C1F;
+  --color-signature: #846B58;
+  --color-soft-border: #E0DDDA;
+  --color-muted-text: #70706F;
+  --color-soft-taupe: #ACA8A5;
+}
+
 @layer base {
   :root {
-    --ink: #15130f;
-    --muted: #7d6856;
-    --paper: #fbfaf8;
+    --ink: var(--color-primary-text);
+    --muted: var(--color-muted-text);
+    --paper: var(--color-primary-bg);
   }
 
   html {
