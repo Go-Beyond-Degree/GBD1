@@ -3,25 +3,14 @@
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
-function DeerMark() {
-  return (
-    <svg viewBox="0 0 38 42" className="h-9 w-7 text-signature" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M16 9c1-4 1-6-2-8M21 9c0-4 2-6 5-7M15 12c-5-1-8-3-10-6M21 12c4-1 7-3 9-6M13 15c-5 1-8 4-8 7 0 3 3 4 7 3" strokeWidth="1.3" />
-      <path d="M17 10c-4 1-6 5-5 10l2 6-2 10m7-26c5 2 7 7 5 12l-3 5 3 9" strokeWidth="1.7" />
-      <path d="M14 21c4 1 7 1 10-1M12 36l-4 4m7-4 3 4m3-4 5 2" strokeWidth="1.4" />
-      <circle cx="19" cy="13" r=".7" fill="currentColor" stroke="none" />
-    </svg>
-  )
-}
-
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <header className="bg-primary-bg px-5 pt-5 sm:px-10 lg:px-16">
-      <nav className="mx-auto flex max-w-[900px] items-center justify-between" aria-label="Primary navigation">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between" aria-label="Primary navigation">
         <a href="#top" className="flex items-center gap-2" aria-label="Go Beyond Degree home">
-          <DeerMark />
+          <img src="/brand/img/logo.png" alt="Go Beyond Degree Logo" className="h-10 w-auto object-contain" />
           <span className="display-serif text-[16px] leading-[1.08] tracking-[-0.025em]">Go Beyond<br />Degree</span>
         </a>
 
