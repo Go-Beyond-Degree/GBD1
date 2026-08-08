@@ -79,10 +79,6 @@ function JourneyArtwork() {
   )
 }
 
-function Avatar({ index }: { index: number }) {
-  const gradients = ['from-[#1e242b] to-[#c39b7a]', 'from-[#775d4e] to-[#e0b590]', 'from-[#111827] to-[#9c6b50]', 'from-[#3c2d27] to-[#c99d79]', 'from-[#2b3139] to-[#9d8170]']
-  return <span className={`relative block h-7 w-7 rounded-full border-2 border-[#fbfaf8] bg-gradient-to-br ${gradients[index]}`}><span className="absolute left-1/2 top-[5px] h-2 w-2 -translate-x-1/2 rounded-full bg-[#e2b28f]" /><span className="absolute bottom-0 left-1/2 h-3 w-4 -translate-x-1/2 rounded-t-full bg-[#272321]" /></span>
-}
 
 function Hero() {
   return (
@@ -98,10 +94,7 @@ function Hero() {
             <a href="#newsletter" className="inline-flex items-center gap-3 rounded-md bg-signature px-5 py-[11px] text-[12px] font-medium text-white shadow-sm transition hover:bg-[#695442]">Join Free Webinar <ArrowRight size={15} strokeWidth={1.4} /></a>
             <a href="#programs" className="inline-flex items-center rounded-md border border-soft-border px-5 py-[11px] text-[12px] text-signature transition hover:bg-warm-ivory">Explore Programs</a>
           </div>
-          <div className="mt-5 flex items-center gap-3">
-            <div className="flex -space-x-1.5">{[0, 1, 2, 3, 4].map((index) => <Avatar index={index} key={index} />)}</div>
-            <p className="text-[11px] text-muted-text">500+ builders are already building the future.</p>
-          </div>
+
         </div>
         <div className="hidden h-[340px] min-w-0 lg:block"><JourneyArtwork /></div>
       </div>
@@ -181,45 +174,22 @@ function Tracks() {
 }
 
 const projects = [
-  { title: 'MyJobSecret', body: 'AI Career Operating System', tags: ['Resume Analyzer', 'Optimizer', 'Cover Letter'], color: 'from-[#11181d] via-[#17242a] to-[#0e1418]' },
-  { title: 'Skill Radar', body: 'Skill Intelligence Platform', tags: ['Skill Mapping', 'Gap Analysis', 'Career Paths'], color: 'from-[#192028] via-[#10141c] to-[#242b31]' },
-  { title: 'CoverCraft AI', body: 'AI Cover Letter Generator', tags: ['Personalized', 'ATS Friendly', 'Smart Templates'], color: 'from-[#1c2429] via-[#171d22] to-[#0b1013]' },
+  { title: 'Resume Analyzer', body: 'AI Career Operating System', tags: ['Resume Analyzer', 'Optimizer', 'Cover Letter'], image: '/images/projects/MJS_RA.png' },
+  { title: 'Resume Optimizer', body: 'Skill Intelligence Platform', tags: ['Skill Mapping', 'Gap Analysis', 'Career Paths'], image: '/images/projects/MJS_RO.png' },
+  { title: 'CoverLetter Generator', body: 'AI Cover Letter Generator', tags: ['Personalized', 'ATS Friendly', 'Smart Templates'], image: '/images/projects/MJS_CL.png' },
 ]
-
-function DashboardPreview({ title, color }: { title: string; color: string }) {
-  return <div className={`relative h-[87px] overflow-hidden bg-gradient-to-br ${color} px-5 py-3 text-white`}>
-    <div className="flex items-center gap-2 text-[7px] text-white/70"><span className="flex h-3 w-3 items-center justify-center rounded bg-[#a07e62] text-[7px] text-white">⌘</span><span className="font-semibold text-white/90">{title}</span></div>
-    <div className="mt-3 grid grid-cols-[45px_1fr] gap-2">
-      <div className="space-y-1 rounded bg-warm-ivory/[.035] p-1.5"><i className="block h-1 w-6 rounded bg-warm-ivory/20" /><i className="block h-1 w-5 rounded bg-warm-ivory/10" /><i className="block h-1 w-6 rounded bg-warm-ivory/10" /></div>
-      <div className="rounded border border-white/10 bg-warm-ivory/[.035] p-2"><i className="block h-1.5 w-1/3 rounded bg-warm-ivory/25" /><div className="mt-2 grid grid-cols-3 gap-1"><i className="h-6 rounded bg-[#5a6a68]/50" /><i className="h-6 rounded bg-warm-ivory/[.06]" /><i className="h-6 rounded bg-warm-ivory/[.06]" /></div></div>
-    </div>
-    <div className="absolute right-5 top-4 h-1 w-9 rounded bg-warm-ivory/[.1]" />
-  </div>
-}
 
 function Projects() {
   return (
     <section id="projects" className="px-5 pb-0 pt-3 sm:px-10 lg:px-16">
       <SectionTitle title="Real Projects. Real Impact." action="See All Projects" />
       <div className="mx-auto mt-2 grid max-w-[1200px] gap-4 md:grid-cols-3">
-        {projects.map((project) => <article key={project.title} className="overflow-hidden rounded-lg border border-soft-border bg-warm-ivory shadow-[0_2px_8px_rgba(76,55,39,.035)]"><DashboardPreview title={project.title} color={project.color} /><div className="px-4 py-2"><h3 className="text-[12px] font-semibold">{project.title}</h3><p className="mt-1 text-[10px] text-muted-text">{project.body}</p><div className="mt-1 flex flex-wrap gap-1">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-soft-border bg-primary-bg px-1.5 py-[2px] text-[8px] text-muted-text">{tag}</span>)}</div></div></article>)}
+        {projects.map((project) => <article key={project.title} className="overflow-hidden rounded-lg border border-soft-border bg-warm-ivory shadow-[0_2px_8px_rgba(76,55,39,.035)]"><img src={project.image} alt={project.title} className="w-full h-auto object-cover border-b border-soft-border" /><div className="px-4 py-3"><h3 className="text-[12px] font-semibold">{project.title}</h3><p className="mt-1 text-[10px] text-muted-text">{project.body}</p><div className="mt-2 flex flex-wrap gap-1">{project.tags.map((tag) => <span key={tag} className="rounded-full border border-soft-border bg-primary-bg px-1.5 py-[2px] text-[8px] text-muted-text">{tag}</span>)}</div></div></article>)}
       </div>
     </section>
   )
 }
 
-function Testimonial() {
-  return (
-    <section className="px-5 pb-0 pt-4 sm:px-10 lg:px-16">
-      <div className="mx-auto flex max-w-[1000px] items-center gap-8 rounded-xl border border-soft-border bg-warm-ivory px-10 py-7 shadow-[0_2px_8px_rgba(76,55,39,.025)]">
-        <Quote size={38} className="shrink-0 rotate-180 text-[#d8d1cb]" fill="currentColor" strokeWidth={0} />
-        <div className="flex-1"><p className="text-[11px] leading-[1.5] text-[#37322e]">GBD changed the way I learn. I didn’t just understand concepts—<br className="hidden sm:block" />I built real products with amazing people and got an internship<br className="hidden sm:block" />I’m proud of.</p></div>
-        <div className="flex shrink-0 items-center gap-3"><span className="relative h-11 w-11 overflow-hidden rounded-full bg-secondary-dark"><span className="absolute left-[15px] top-2 h-3 w-3 rounded-full bg-[#c88761]" /><span className="absolute bottom-0 left-[10px] h-5 w-6 rounded-t-full bg-[#3c4242]" /></span><div><p className="text-[11px] font-semibold">Rohit Sharma</p><p className="mt-1 text-[9px] text-muted-text">AI Product Engineer Intern at Zeta</p></div></div>
-      </div>
-      <div className="-mt-1 flex justify-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-signature" /><span className="h-1.5 w-1.5 rounded-full border border-soft-border" /><span className="h-1.5 w-1.5 rounded-full border border-soft-border" /></div>
-    </section>
-  )
-}
 
 function Newsletter() {
   return (
@@ -233,5 +203,5 @@ function Newsletter() {
 }
 
 export default function LandingContent() {
-  return <main><Hero /><Stats /><Features /><Tracks /><Projects /><Testimonial /><Newsletter /></main>
+  return <main><Hero /><Stats /><Features /><Tracks /><Projects /><Newsletter /></main>
 }
